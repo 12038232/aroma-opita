@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aroma Opita - Café Especial de Neiva</title>
-
+    <!-- Tailwind CSS 4 Play CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <style type="text/tailwindcss">
+        /* Fuerza a Tailwind a usar la clase .dark para el modo oscuro manual */
+        @custom-variant dark (&:is(.dark *));
+
         @theme {
             --color-bg-primary: #FAF6F0;
             --color-cafe-dark: #3E2723;
@@ -23,7 +26,7 @@
 </head>
 <body class="bg-[#FAF6F0] text-gray-800 font-sans dark:bg-zinc-900 dark:text-gray-100 transition-colors duration-300">
 
-
+    <!-- NAVBAR -->
     <header class="fixed top-0 left-0 w-full bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md shadow-sm z-50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="font-serif text-2xl font-bold text-[#3E2723] dark:text-orange-400">Aroma Opita</a>
@@ -41,7 +44,7 @@
                 <button id="menuBtn" class="md:hidden text-2xl cursor-pointer">☰</button>
             </div>
         </div>
-    
+        <!-- Menú Móvil -->
         <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-zinc-800 border-t border-gray-200 dark:border-zinc-700 px-6 py-4 flex flex-col gap-4">
             <a href="#menu" class="mobile-link hover:text-[#E07A2E]">Menú</a>
             <a href="#nosotros" class="mobile-link hover:text-[#E07A2E]">Nosotros</a>
@@ -50,12 +53,12 @@
         </div>
     </header>
 
-
+    <!-- HERO SECTION -->
     <section class="relative h-screen flex items-center justify-center text-center px-6 bg-[url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center">
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="relative z-10 max-w-3xl text-white">
             <span class="bg-[#E07A2E] text-xs uppercase tracking-widest px-3 py-1 rounded-full font-semibold">Café Especial de Neiva</span>
-            <h1 class="font-serif text-4xl sm:text-6xl font-bold mt-4 mb-6">Café y tecnología para la comunidad FET</h1>
+            <h1 class="font-serif text-4xl sm:text-6xl font-bold mt-4 mb-6">El auténtico sabor del Huila en tu taza</h1>
             <p class="text-lg text-gray-200 mb-8">Disfruta la tradición cafetera con un espacio moderno pensado para universitarios y amantes del buen café.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#menu" class="bg-[#E07A2E] text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors shadow-lg">Ver Menú</a>
@@ -64,7 +67,24 @@
         </div>
     </section>
 
+    <!-- SECCIÓN NOSOTROS -->
+    <section id="nosotros" class="py-24 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=800" alt="Tradición cafetera" class="rounded-2xl shadow-lg w-full h-80 object-cover">
+        </div>
+        <div class="md:w-1/2">
+            <span class="text-[#E07A2E] font-bold tracking-wider uppercase text-sm mb-2 block">Nuestra Historia</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#3E2723] dark:text-white mb-6">De las fincas del Huila a tu mesa</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-4 text-lg">
+                Nacimos con un propósito claro: ofrecer el auténtico sabor de las montañas cafeteras de San Agustín y Acevedo directamente a la comunidad universitaria de Neiva.
+            </p>
+            <p class="text-gray-600 dark:text-gray-400">
+                En Aroma Opita no solo servimos café de especialidad, sino que brindamos el ambiente perfecto con conexión de alta velocidad para que encuentres tu espacio ideal de estudio e inspiración.
+            </p>
+        </div>
+    </section>
 
+    <!-- MENÚ -->
     <section id="menu" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#3E2723] dark:text-white">Nuestro Menú Artesanal</h2>
@@ -77,12 +97,12 @@
                 <div class="p-6">
                     <div class="flex justify-between items-center mb-2">
                         <h3 class="font-bold text-xl">Latte Opita</h3>
-                        <span class="text-[#E07A2E] font-bold"> COP</span>
+                        <span class="text-[#E07A2E] font-bold">$7.500 COP</span>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Espresso doble con leche texturizada y notas de panela.</p>
                 </div>
             </div>
-         
+            <!-- Tarjeta 2 -->
             <div class="bg-white dark:bg-zinc-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-gray-100 dark:border-zinc-700">
                 <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=600" alt="Cold Brew" class="w-full h-48 object-cover">
                 <div class="p-6">
@@ -93,7 +113,7 @@
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Café macerado en frío durante 18 horas, refrescante y frutal.</p>
                 </div>
             </div>
-          
+            <!-- Tarjeta 3 -->
             <div class="bg-white dark:bg-zinc-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-gray-100 dark:border-zinc-700">
                 <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=600" alt="Almojábana" class="w-full h-48 object-cover">
                 <div class="p-6">
@@ -107,7 +127,7 @@
         </div>
     </section>
 
-
+    <!-- FAQ (ACORDEÓN) -->
     <section id="faq" class="py-24 bg-white dark:bg-zinc-800 px-6">
         <div class="max-w-3xl mx-auto">
             <h2 class="font-serif text-3xl font-bold text-center mb-12 text-[#3E2723] dark:text-white">Preguntas Frecuentes</h2>
@@ -124,9 +144,9 @@
         </div>
     </section>
 
-  
+    <!-- FORMULARIO DE RESERVA -->
     <section id="contacto" class="py-24 px-6 max-w-3xl mx-auto">
-        <div class="bg-white dark:bg-zinc-800 p-8 sm:p-12 rounded-3xl shadow-lg border border-gray-100 dark:border-zinc-700 relative">
+        <div class="bg-white dark:bg-zinc-800 p-8 sm:p-12 rounded-3xl shadow-lg border border-gray-100 dark:border-zinc-700 relative overflow-hidden">
             <h2 class="font-serif text-3xl font-bold mb-2 text-[#3E2723] dark:text-white">Reserva tu Mesa</h2>
             <p class="text-gray-600 dark:text-gray-400 mb-8">Asegura tu espacio para los recesos o reuniones de estudio.</p>
             
@@ -155,23 +175,23 @@
                 <button type="submit" class="w-full bg-[#E07A2E] text-white py-4 rounded-xl font-bold hover:bg-orange-600 transition-colors shadow-md cursor-pointer">Confirmar Reserva</button>
             </form>
 
-          
-            <div id="toast" class="absolute bottom-6 right-6 bg-[#22B573] text-white px-6 py-3 rounded-xl shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
-                <span> ¡Reserva enviada con éxito! Te esperamos.</span>
+            <!-- TOAST DE CONFIRMACIÓN -->
+            <div id="toast" class="absolute bottom-6 right-6 bg-[#22B573] text-white px-6 py-3 rounded-xl shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 pointer-events-none z-50">
+                <span>✅ ¡Reserva enviada con éxito! Te esperamos.</span>
             </div>
         </div>
     </section>
 
-   
-    <footer class="bg-[#18181b] text-white py-12 px-6 text-center">
+    <!-- FOOTER -->
+    <footer class="bg-[#3E2723] text-white py-12 px-6 text-center transition-colors duration-300">
         <p class="font-serif text-xl mb-2">Aroma Opita</p>
         <p class="text-sm text-gray-300">Neiva, Huila — Colombia | Universidad FET</p>
         <p class="text-xs text-gray-400 mt-6">© 2026 Santiago González Reinoso. Todos los derechos reservados.</p>
     </footer>
 
-   
+    <!-- JAVASCRIPT -->
     <script>
-       
+        // Menú Hamburguesa
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
@@ -179,13 +199,13 @@
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
 
-       
+        // Modo Oscuro
         const darkToggle = document.getElementById('darkToggle');
         darkToggle.addEventListener('click', () => {
             document.documentElement.classList.toggle('dark');
         });
 
-       
+        // Validación de Formulario y Toast
         const form = document.getElementById('reservaForm');
         const toast = document.getElementById('toast');
 
