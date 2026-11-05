@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <style type="text/tailwindcss">
-        /* Fuerza a Tailwind a usar la clase .dark para el modo oscuro manual */
         @custom-variant dark (&:is(.dark *));
 
         @theme {
@@ -199,10 +198,16 @@
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
 
-        // Modo Oscuro
+        // Modo Oscuro (Forzado con esquema y clase)
         const darkToggle = document.getElementById('darkToggle');
         darkToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.style.colorScheme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.style.colorScheme = 'dark';
+            }
         });
 
         // Validación de Formulario y Toast
